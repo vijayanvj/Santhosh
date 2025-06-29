@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Industrial Products - R.S Engineering</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    body {
+      background-color: #111827;
+      color: #fff;
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+    }
+    h1 {
+      text-align: center;
+      color: #fbbf24;
+      margin-top: 40px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+    .product {
+      background: #1f2937;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .product:hover { transform: scale(1.03); }
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+    }
+    .product p {
+      margin-top: 10px;
+      color: #fbbf24;
+      font-weight: bold;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.85);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      max-width: 90%;
+      max-height: 80%;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      color: #111;
+    }
+    .modal-content img {
+      max-width: 100%;
+      max-height: 60vh;
+      margin-bottom: 15px;
+    }
+    .modal-content p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .close {
+      position: absolute;
+      top: 20px; right: 30px;
+      font-size: 30px;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <h1>Our Products</h1>
+  <div class="grid">
+    <!-- All 19 products with detailed descriptions -->
+    <div class="product" onclick="openImage('images/image1.png','Gearbox Model A','Heavy-duty gearbox built for high torque demands in industrial machinery. Manufactured using precision-machined gears and hardened metal alloys. Designed with low maintenance seals and lubrication retention. Ideal for conveyor systems and heavy load applications.')">
+      <img src="images/image1.png" alt="Gearbox Model A">
+      <p>Gearbox Model A</p>
+    </div>
+
+    <div class="product" onclick="openImage('images/image2.png','Gearbox Model B','Compact and efficient gearbox suitable for textile and automation industries. Features optimized gear ratios to balance torque and speed. Encased in corrosion-resistant housing for longer service life. Delivers smooth performance under continuous operation.')">
+      <img src="images/image2.png" alt="Gearbox Model B">
+      <p>Gearbox Model B</p>
+    </div>
+
+    <div class="product" onclick="openImage('images/image3.png','Roller Shaft','Precision roller shaft engineered for minimal vibration and smooth rotation under load. Surface ground to tight tolerances and treated for enhanced wear resistance. Ideal for printing presses, conveyor rollers, and drum applications. Ensures stable, long-lasting performance.')">
+      <img src="images/image3.png" alt="Roller Shaft">
+      <p>Roller Shaft</p>
+    </div>
+
+    <div class="product" onclick="openImage('images/image4.png','Motor Housing','Heavy-duty motor housing crafted from aluminum alloy for optimal heat dissipation. Reinforced mounting points ensure secure setup in harsh environments. Sealed against dust and moisture for reliable performance. Suitable for electric drive systems and industrial motors.')">
+      <img src="images/image4.png" alt="Motor Housing">
+      <p>Motor Housing</p>
+    </div>
+
+    <div class="product" onclick="openImage('images/image5.png','Coupling Unit','Flexible coupling designed to transmit power while compensating for minor misalignment. Constructed with high-grade elastomer inserts to dampen vibration and noise. Ideal for pump, compressor, and motor assemblies. Enhances system lifespan and reduces maintenance.')">
+      <img src="images/image5.png" alt="Coupling Unit">
+      <p>Coupling Unit</p>
+    </div>
+
+    <div class="product" onclick="openImage('images/image6.png','Gear Shaft Assembly','Integrated gear-shaft system engineered for precise torque delivery and minimal backlash. Machined from hardened steel and thermally treated for strength. Suitable for automotive and industrial gearbox assemblies. Designed for high RPM endurance.')">
+      <img src="images/image6.png" alt="Gear Shaft Assembly">
+      <p>Gear Shaft Assembly</p>
+    </div>
+
+    <div class="product" onclick="openImage('images/image7.png','Gearbox Casing','Sturdy cast iron casing designed to house heavy-duty gearbox components. Engineered for vibration dampening and optimal structural support. Surface-coated to resist corrosion and wear. Compatible with a range of gearbox modules.')">
+      <img src="images/image7.png" alt="Gearbox Casing">
+      <p>Gearbox Casing</p>
+    </div>
+
+    <div class="product" onclick="openImage('images/image8.png','Motor Base','Robust motor base platform ideal for industrial applications. Fabricated from thick steel with precision mounting bores. Ensures vibration isolation and secure anchoring of motors. Compatible with both AC and DC motor setups.')">
+      <img src="images/image8.png" alt="Motor Base">
+      <p>Motor Base</p>
+    </div>
+
+    <div class="product" onclick="openImage('images/image9.png','Drive Pulley','High-strength steel pulley with precision grooves to ensure positive belt engagement. Balanced for high-speed operation reducing wobble and noise. Ideal for conveyors and belt-driven systems. Surface coated to resist abrasion.')">
+      <img src="images/image9.png" alt="Drive Pulley">
+      <p>Drive Pulley</p>
+    </div>
+
+    <!-- <div class="product" onclick="openImage('images/image10.png','Flywheel Shaft','Balanced flywheel-shaft designed to store rotational energy and stabilize machinery operation. Machined to precise tolerances and finished for minimal friction. Suitable for presses, internal combustion engines, and drive systems. Provides consistent RPM control.')">
+      <img src="images/image10.png" alt="Flywheel Shaft">
+      <p>Flywheel Shaft</p>
+    </div> -->
+
+    <div class="product" onclick="openImage('images/image11.png','Crusher Frame','Heavy-duty frame designed to support industrial crushers in mining and construction. Welded steel structure with gusset reinforcement for load stability. Supports high compressive forces and reduces vibration transfer. Powder-coated for corrosion protection.')">
+      <img src="images/image11.png" alt="Crusher Frame">
+      <p>Crusher Frame</p>
+    </div>
+
+    <div class="product" onclick="openImage('images/image12.png','Drive Housing','Precision drive housing to align shafts and gears accurately. Built with tight tolerances to prevent misalignment. Machined from aluminum or cast iron depending on setup. Ideal for gearboxes, motors and power train modules.')">
+      <img src="images/image12.png" alt="Drive Housing">
+      <p>Drive Housing</p>
+    </div>
+
+    <div class="product" onclick="openImage('images/image13.png','Crusher Base','Solid crusher base engineered to isolate vibration and anchor crushing equipment. Machined mounting slots for easy assembly and tight fit. Reinforced for long-term durability even under heavy load cycles. Used in rock and mineral crushing setups.')">
+      <img src="images/image13.png" alt="Crusher Base">
+      <p>Crusher Base</p>
+    </div>
+
+    <div class="product" onclick="openImage('images/image14.png','Pinion Stand','Angular pinion support stand built for precise gear engagement. Machined from hardened steel with accurate bore alignment. Ideal for gearboxes and drive trains, reduces gear wear and improves mesh accuracy. Finished to resist industrial wear.')">
+      <img src="images/image14.png" alt="Pinion Stand">
+      <p>Pinion Stand</p>
+    </div>
+
+    <div class="product" onclick="openImage('images/image15.png','Motor Mount','Heavy-duty motor mount with built-in shock isolation. Fabricated from steel with rubber dampers. Prevents motor vibration transfer to structure. Ideal for pumps, compressors and high-speed motor applications.')">
+      <img src="images/image15.png" alt="Motor Mount">
+      <p>Motor Mount</p>
+    </div>
+
+    <div class="product" onclick="openImage('images/image16.png','Hydraulic Head','High-pressure hydraulic head for precision fluid control in industrial equipment. Built with corrosion-resistant materials and high-torque fittings. Suitable for presses and hydraulic machinery. Engineered for consistent pressure delivery.')">
+      <img src="images/image16.png" alt="Hydraulic Head">
+      <p>Hydraulic Head</p>
+    </div>
+
+    <div class="product" onclick="openImage('images/image17.png','Crusher Hopper','Heavy-duty feed hopper designed for efficient material flow. Built from abrasion-resistant steel with tapered walls to prevent clogging. Supports steady feed rates in crushing and screening equipment. Easy to mount and maintain.')">
+      <img src="images/image17.png" alt="Crusher Hopper">
+      <p>Crusher Hopper</p>
+    </div>
+
+    <div class="product" onclick="openImage('images/image18.png','Gear Wheel','Precision-cut gear wheel with hardened teeth for smooth torque transfer. Heat-treated and balanced to reduce noise and wear. Ideal for gearboxes, transmissions, and powertrain systems. Available in various modules and sizes.')">
+      <img src="images/image18.png" alt="Gear Wheel">
+      <p>Gear Wheel</p>
+    </div>
+
+    <div class="product" onclick="openImage('images/image19.png','End Bearing Block','Structural bearing block that supports rotational shafts. Machined housing ensures proper bearing alignment. Used in conveyor, gearbox and rotating machinery. Built to reduce friction and prolong service life.')">
+      <img src="images/image19.png" alt="End Bearing Block">
+      <p>End Bearing Block</p>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+      <img id="modalImage" src="" alt="Large Preview" />
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+    </div>
+  </div>
+
+  <script>
+    function openImage(imagePath, title, description) {
+      document.getElementById("modalImage").src = imagePath;
+      document.getElementById("modalTitle").innerText = title;
+      document.getElementById("modalDescription").innerText = description;
+      document.getElementById("modal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+
+    fetch("header.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("header-placeholder").innerHTML = html;
+      });
+  </script>
+</body>
+</html>

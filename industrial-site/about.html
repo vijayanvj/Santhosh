@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - R.S Engineering</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #111827; /* Dark background */
+      color: #f0f0f0;
+      margin: 0;
+    }
+
+    .hero-banner {
+      background: url('images/about-banner.jpg') no-repeat center center/cover;
+      height: 60vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+
+    .hero-banner h1 {
+      font-size: 3rem;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px 40px;
+      border-radius: 8px;
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      color: #fbbf24;
+      margin-bottom: 20px;
+    }
+
+    .section p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .feature {
+      background: #1f2937;
+      padding: 25px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      color: #f0f0f0;
+    }
+
+    .feature i {
+      font-size: 40px;
+      color: #fbbf24;
+      margin-bottom: 15px;
+    }
+
+    .timeline {
+      background: #1f2937;
+      color: white;
+      padding: 40px 20px;
+      border-radius: 10px;
+    }
+
+    .timeline h2 {
+      color: #fbbf24;
+    }
+
+    .timeline ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .timeline li {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+
+    .industries {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .industries span {
+      background: #fbbf24;
+      color: #000;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1f2937;
+      color: white;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+
+  <!-- Hero Banner -->
+  <section class="hero-banner">
+    <h1>Engineering Excellence for Every Industry</h1>
+  </section>
+
+  <!-- Company Overview -->
+  <section class="section">
+    <h2>Who We Are</h2>
+    <p>
+       R.S Engineering is a pioneer in designing and manufacturing robust industrial machinery components that drive productivity and durability. For over 15 years, we've served sectors like textile, steel, power, and cement with gearboxes, shafts, housings, and customized solutions.
+    </p>
+    <p>
+      Our legacy is built on precision engineering, customer satisfaction, and a commitment to innovation. From small businesses to large industrial plants, our products are trusted by engineers and operators across India.
+    </p>
+  </section>
+
+  <!-- Core Values -->
+  <section class="section">
+    <h2>Our Core Strengths</h2>
+    <div class="features-grid">
+      <div class="feature">
+        <i class="fas fa-cogs"></i>
+        <h3>Precision Manufacturing</h3>
+        <p>Every component is engineered with micron-level accuracy and tested for endurance.</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-truck-fast"></i>
+        <h3>Timely Delivery</h3>
+        <p>Streamlined production ensures your equipment gets the parts it needs—on time.</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-user-shield"></i>
+        <h3>Trusted Quality</h3>
+        <p>ISO-standard practices and stringent quality checks make us a reliable partner.</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-headset"></i>
+        <h3>Support You Can Count On</h3>
+        <p>We’re more than suppliers—we’re long-term partners with dedicated technical teams.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Timeline -->
+  <section class="section timeline">
+    <h2>Our Journey</h2>
+    <ul>
+      <li><strong>2009:</strong> Revanth Engineering Works was established</li>
+      <li><strong>2012:</strong> Started supplying components to textile industries</li>
+      <li><strong>2015:</strong> Expanded into heavy machinery and steel plant supply</li>
+      <li><strong>2018:</strong> Partnered with over 100 industrial clients</li>
+      <li><strong>2024:</strong> Introduced high-precision automated gearboxes</li>
+    </ul>
+  </section>
+
+  <!-- Sectors Served -->
+  <section class="section">
+    <h2>Industries We Serve</h2>
+    <p>We deliver components and assemblies for:</p>
+    <div class="industries">
+      <span>Textile Machinery</span>
+      <span>Steel Plants</span>
+      <span>Cement Industries</span>
+      <span>Power Transmission</span>
+      <span>Food Processing</span>
+      <span>Mining</span>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 R.S Engineering / Revanth Engineering Works. All rights reserved.
+  </footer>
+
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>
